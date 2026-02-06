@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      color: #fff;
+    }
+
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+    .logo {
+      width: 100px;
+    }
+    nav a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* FAQ Section */
+    .faq {
+      margin: 40px 0;
+    }
+    .faq h2 {
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #000;
+    }
+    .faq-item {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+    .faq-item h3 {
+      margin: 0 0 10px;
+    }
+
+    /* Contact Form */
+    .contact {
+      margin: 40px 0;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .contact h2 {
+      margin-bottom: 15px;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact input, .contact textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .contact button {
+      padding: 12px;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact button:hover {
+      background-color: #666;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <img src="logo.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="membership.html">Membership</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How do I reset my password?</h3>
+        <p>You can reset your password by clicking “Forgot Password” on the login page.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I cancel my subscription?</h3>
+        <p>Go to your account settings and select “Cancel Subscription.”</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my data secure?</h3>
+        <p>Yes, we use encryption and comply with privacy regulations to protect your information.</p>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>About | Contact | Support</p>
+      <p>Legal disclaimers and compliance notice</p>
+    </footer>
+  </div>
+</body>
+</html>
