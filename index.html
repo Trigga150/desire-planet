@@ -9,16 +9,41 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       flex-direction: column;
-      backdrop-filter: blur(2px);
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
     }
+
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    /* Logo styling */
+    .logo {
+      width: 120px;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Loader animation */
     .loader {
       border: 8px solid rgba(255, 255, 255, 0.2);
       border-top: 8px solid #fff;
@@ -26,18 +51,71 @@
       width: 60px;
       height: 60px;
       animation: spin 1s linear infinite;
+      margin: auto;
     }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+    /* Text animation */
     .text {
       margin-top: 20px;
       font-size: 1.2em;
+      color: #fff;
       text-shadow: 0 0 5px #000;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Progress bar */
+    .progress {
+      width: 200px;
+      height: 10px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 5px;
+      margin: 20px auto 0;
+      overflow: hidden;
+    }
+    .bar {
+      width: 0;
+      height: 100%;
+      background: #fff;
+      animation: load 3s linear forwards;
+    }
+    @keyframes load {
+      from { width: 0; }
+      to { width: 100%; }
     }
   </style>
+  <script>
+    window.onload = function() {
+      setTimeout(function() {
+        window.location.href = "verify.html";
+      }, 3000); // redirect after 3 seconds
+    };
+  </script>
 </head>
 <body>
-  <div class="loader"></div>
-  <div class="text">Preparing experience
+  <div class="content">
+    <!-- Replace logo.png with your actual logo -->
+    <img src="logo.png" alt="Logo" class="logo" />
+    <div class="loader"></div>
+    <div class="text">Preparing experience...</div>
+    <div class="progress">
+      <div class="bar"></div>
+    </div>
+  </div>
+</body>
+</html>
