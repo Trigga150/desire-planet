@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access Gateway</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #fff;
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    /* Logo styling */
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 1.8em;
+      text-shadow: 0 0 5px #000;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1em;
+      text-shadow: 0 0 5px #000;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Replace logo.png with your actual logo -->
+    <img src="logo.png" alt="Logo" class="logo" />
+    <h1>Access Restricted</h1>
+    <p>This experience is intended for mature audiences.</p>
+    <button onclick="location.href='home.html'">Enter</button>
+    <button onclick="alert('Disclaimer: Viewer discretion advised.')">Disclaimer</button>
+  </div>
+</body>
+</html>
